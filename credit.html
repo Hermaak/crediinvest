@@ -24,10 +24,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    :
   </head>
   <body>
-    <header>
-      <a href="./index.html" class="logo">
+     <header>
+      <a href="/index.html" class="logo">
         <img src="./assets/img/logo-text.png" width="200" alt="logo" />
       </a>
       <nav>
@@ -53,7 +54,8 @@
         <label for="nome">Apelido:</label>
         <input type="text" name="apelido" id="apelido" required />
         <label for="valor">Valor:</label>
-        <input
+        <input type="number" name="valor" id="valor" value="500">
+        <!-- <input
           type="range"
           name="valor"
           id="valor"
@@ -62,14 +64,14 @@
           max="50000"
           step="100"
         />
-        <output>500 MT</output>
+        <output>500 MT</output> -->
         <label for="juro">Total com juros (28%):</label>
         <input type="text" name="juro" id="juro" value="640 MT" disabled />
-        <label for="tel">Telefone</label>
+        <label for="tel">Telefone:</label>
         <input type="text" name="tel" required />
-        <label for="email">Email</label>
+        <label for="email">Email:</label>
         <input type="text" name="email" />
-        <label for="desc">Descrição</label>
+        <label for="desc">Descrição:</label>
         <textarea
           name="desc"
           id="desc"
@@ -122,8 +124,8 @@
 
     <script src="./js/main.js"></script>
     <script>
-      document.querySelector("#valor").addEventListener("input", (e) => {
-        document.querySelector("output").textContent = e.target.value + " MT";
+      document.querySelector("#valor").addEventListener("change", (e) => {
+        // document.querySelector("output").textContent = e.target.value + " MT";
         document.querySelector("#juro").value =
           parseFloat(e.target.value) * 1.28 + " MT";
       });

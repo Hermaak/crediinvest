@@ -203,3 +203,19 @@ footer .f-right > div {
     flex-direction: column;
   }
 }
+
+
+/* Libraries */
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  background-color: var(--color1); /* troque pela cor que quiser */
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 40px;      /* largura das linhas */
+  height: 2px;      /* espessura */
+}

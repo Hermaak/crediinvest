@@ -70,7 +70,39 @@ header nav a:hover {
   font-size: 14px;
 }
 
+.btn-menu {
+  background: none;
+  outline: none;
+  border: none;
+  color: var(--color1);
+  display: none;
+}
+
+.btn-menu:active {
+  opacity: .8;
+}
+
 /* Main */
+
+.menu {
+  position: fixed;
+  left: -80%;
+  top: 0;
+  bottom: 0;
+  background-color: #0b0a0a;
+  z-index: 10;
+  width: 80%;
+  display: none;
+}
+
+.menu nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu nav a {
+  margin: 10px 20px;
+}
 
 main {
   min-height: 100vh;
@@ -146,6 +178,14 @@ footer .f-right > div {
 @media screen and (max-width: 420px) {
   header nav {
     display: none;
+  }
+
+  .btn-menu {
+    display: inline-block;
+  }
+
+  .menu {
+    display: flex;
   }
 
   footer {

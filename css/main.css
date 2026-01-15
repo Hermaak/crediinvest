@@ -1,0 +1,160 @@
+@font-face {
+  font-family: nunito;
+  src: url(../assets/fonts/nunito-sans.extralight.ttf);
+}
+
+:root {
+  --color1: #05574a;
+  --color2: #7a4321;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: nunito;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+  margin: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color1);
+}
+
+button:disabled {
+  background-color: #aaa;
+}
+
+/* Header */
+
+header {
+  background-color: #fff;
+  height: 40px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+header nav {
+  display: block;
+}
+
+header nav a {
+  margin-left: 10px;
+  padding: 5px;
+  transition: all 0.3s ease-in;
+}
+
+header nav a:hover {
+  border-bottom: 1px solid var(--color1);
+}
+
+.btn-credit {
+  background-color: var(--color1);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Main */
+
+main {
+  min-height: 100vh;
+  padding: 10px;
+  background-color: #eee;
+}
+
+#btn-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  /* background-color: #25d366; */
+  background-color: var(--color1);
+  border-radius: 100%;
+  transition: all 0.3s ease-in;
+}
+
+#btn-whatsapp:hover {
+  transform: scale(1.08);
+}
+
+/* Footer */
+footer {
+  min-height: 200px;
+  background-color: #eee;
+  background-color: #0b0a0a;
+  background-color: #0e0e0e;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer a:hover {
+  border-bottom: 1px solid var(--color1);
+}
+
+footer h2 {
+  color: #aaa;
+}
+
+footer > div {
+  display: flex;
+  /* border: 1px solid #000; */
+}
+
+footer .f-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+}
+
+footer .f-right {
+  width: 60%;
+  justify-content: space-around;
+}
+
+footer .f-right > div {
+  margin: 20px;
+}
+
+.rs a {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 420px) {
+  header nav {
+    display: none;
+  }
+
+  footer {
+    flex-direction: column;
+
+  }
+
+  footer .f-right {
+    width: 60%;
+    flex-direction: column;
+  }
+}

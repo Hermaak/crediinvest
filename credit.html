@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crediinvest</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/img/logo_.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/credit.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+      integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="./index.html" class="logo">
+        <img src="./assets/img/logo-text.png" width="200" alt="logo" />
+      </a>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="">Sobre Nós</a>
+        <a href="">Contacto</a>
+      </nav>
+    </header>
+    <main>
+      <form>
+        <h1>Formulário de empréstimo</h1>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required />
+        <label for="nome">Apelido:</label>
+        <input type="text" name="apelido" id="apelido" required />
+        <label for="valor">Valor:</label>
+        <!-- <input type="number" name="valor" id="valor" value="500"> -->
+        <input
+          type="range"
+          name="valor"
+          id="valor"
+          value="500"
+          min="500"
+          max="50000"
+          step="100"
+        />
+        <output>500 MT</output>
+        <label for="juro">Total com juros (28%):</label>
+        <input type="text" name="juro" id="juro" value="640 MT" disabled />
+        <label for="tel">Telefone</label>
+        <input type="text" name="tel" required />
+        <label for="email">Email</label>
+        <input type="text" name="email" />
+        <label for="desc">Descrição</label>
+        <textarea
+          name="desc"
+          id="desc"
+          placeholder="Descreva a finalidade do empréstimo..."
+          rows="7"
+        ></textarea>
+        <button type="submit">Submeter</button>
+      </form>
+      <a href="https://wa.me/+258872081978" id="btn-whatsapp"
+        ><i class="la la-lg la-whatsapp"></i
+      ></a>
+    </main>
+
+    <footer>
+      <div class="f-left">
+        <img src="./assets/img/logo.svg" width="100" height="100" alt="logo" />
+        <p>crediinvest &copy 2026</p>
+      </div>
+      <div class="f-right">
+        <div>
+          <h2>Sobre nós</h2>
+          <ul>
+            <li><a href="">Quem somos nós?</a></li>
+            <li><a href="">Missão, Visão e valores</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Serviços</h2>
+          <ul>
+            <li><a href="">Microcrédito</a></li>
+            <li><a href="">Crédito especializado</a></li>
+            <li><a href="">Financiamento</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contacto</h2>
+          <ul>
+            <li><a href="">(+258) 872081978</a></li>
+            <li><a href="">Fernão Veloso nº 343</a></li>
+          </ul>
+
+          <div class="rs">
+            <a href=""><i class="la la-lg la-facebook"></i></a>
+            <a href=""><i class="la la-lg la-instagram"></i></a>
+            <a href=""><i class="la la-lg la-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelector("#valor").addEventListener("input", (e) => {
+        document.querySelector('output').textContent = e.target.value + ' MT'
+        document.querySelector("#juro").value =
+          parseFloat(e.target.value) * 1.28 + ' MT';
+      });
+
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        document.querySelector("button").disabled = true;
+        const form = new FormData(e.target);
+
+        const nome = form.get("nome");
+        const apelido = form.get("apelido");
+        const valor = parseFloat(form.get("valor"));
+        const tel = form.get("tel");
+        const email = form.get("email");
+        const desc = form.get("desc");
+
+        const data = { nome, apelido, valor, tel, email, desc };
+
+        try {
+          console.log(data);
+          alert("Obrigado, entraremos em contacto.");
+          e.target.reset()
+        } catch (error) {
+          console.log(error);
+        }
+        document.querySelector("button").disabled = false;
+      });
+    </script>
+  </body>
+</html>

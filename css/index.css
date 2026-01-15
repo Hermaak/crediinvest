@@ -1,0 +1,51 @@
+/* Main */
+main {
+  background: url(../assets/img/bus.jpeg) no-repeat center center/cover;
+}
+
+
+main h1 {
+  font-size: 42px;
+  text-align: center;
+  color: #aaa;
+  font-size: 42px;
+}
+
+.banner {
+  width: 30%;
+  height: 65vh;
+  margin: auto;
+  position: relative;
+  background: url(../assets/img/hand-holding.svg) no-repeat center center/contain;
+  border: 5px dotted #dddddd1d;
+  border-radius: 100%;
+}
+
+.banner a {
+  display: block;
+  width: 80px;
+  height: 100px;
+  position: absolute;
+  top: calc(25% + 10px);
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: all .5s ease;
+  animation: anm 2s 1s infinite;
+}
+
+@keyframes anm {
+  from{top: calc(25% + 10px);}
+  to{top: 25%;}
+}
+
+@media screen and (max-width: 420px) {
+  .banner {
+    width: 80%;
+    height: 55vh;
+  }
+
+  main h1 {
+    font-size: 24px;
+  }
+}

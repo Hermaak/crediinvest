@@ -1,0 +1,69 @@
+/* Main */
+main {
+  background: url(../assets/img/bus.jpeg) no-repeat center center/cover;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 520px;
+  margin: 10px auto 50px auto;
+  padding: 20px;
+  border-radius: 5px;
+  min-height: 100vh;
+  border: 5px dotted #dddddd1d;
+  box-sizing: border-box;
+}
+
+form h1 {
+  color: #aaa;
+}
+
+label {
+  color: #aaa;
+}
+
+input, textarea {
+  padding: 15px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  margin: 5px 0 5px 0;
+}
+
+input:disabled {
+  color: #fff;
+}
+
+output {
+  color: #fff;
+}
+
+button {
+  padding: 15px;
+  border-radius: 2px;
+  border: none;
+  background-color: var(--color1);
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+button:hover {
+  opacity: .8;
+}
+
+button:active {
+  opacity: .7;
+}
+
+@media screen and (max-width: 420px) {
+  form {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+}

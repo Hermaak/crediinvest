@@ -1,10 +1,6 @@
 let menuHidden = true;
 
 document.querySelector(".btn-menu").addEventListener("click", () => {
-  toggleMenu();
-});
-
-function toggleMenu() {
-  document.querySelector(".menu").style.left = menuHidden ? 0 : "-80%";
+  $(".menu").animate({ left: menuHidden ? 0 : "-80%" }, 500);
   menuHidden = !menuHidden;
-}
+});

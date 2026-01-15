@@ -84,7 +84,7 @@ header nav a:hover {
 }
 
 .btn-menu:active {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 /* Main */
@@ -181,6 +181,10 @@ footer .f-right > div {
 }
 
 @media screen and (max-width: 420px) {
+  .logo img {
+    width: 140px;
+  }
+
   header nav {
     display: none;
   }
@@ -195,7 +199,6 @@ footer .f-right > div {
 
   footer {
     flex-direction: column;
-
   }
 
   footer .f-right {
@@ -203,7 +206,6 @@ footer .f-right > div {
     flex-direction: column;
   }
 }
-
 
 /* Libraries */
 
@@ -220,6 +222,6 @@ footer .f-right > div {
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
-  width: 40px;      /* largura das linhas */
-  height: 2px;      /* espessura */
+  width: 40px; /* largura das linhas */
+  height: 2px; /* espessura */
 }

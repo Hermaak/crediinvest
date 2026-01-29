@@ -1,3 +1,5 @@
+const api_url = 'http://localhost:8000'
+
 let menuHidden = true;
 
 var hamburger = document.querySelector(".hamburger");

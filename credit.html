@@ -62,7 +62,7 @@
       <form>
         <h1>Formulário de empréstimo</h1>
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" required />
+        <input type="text" name="nome" id="nome" required autofocus />
         <label for="nome">Apelido:</label>
         <input type="text" name="apelido" id="apelido" required />
         <label for="valor">Valor:</label>
@@ -142,7 +142,7 @@
           parseFloat(e.target.value) * 1.28 + " MT";
       });
 
-      document.querySelector("form").addEventListener("submit", (e) => {
+      document.querySelector("form").addEventListener("submit", async (e) => {
         e.preventDefault();
         document.querySelector("button").disabled = true;
         const form = new FormData(e.target);
@@ -157,12 +157,26 @@
         const data = { nome, apelido, valor, tel, email, desc };
 
         try {
-          console.log(data);
-          alert("Obrigado, entraremos em contacto.");
-          e.target.reset();
+          const res = await fetch(api_url + "/crediinvest/create", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              app: "crediinvest",
+              // user: localStorage.getItem("user"),
+            },
+            body: JSON.stringify(data),
+          });
+
+          if (res.status === 200) {
+            const data = await res.json();
+            console.log(data)
+            alert("Obrigado, entraremos em contacto.");
+            e.target.reset();
+          }
         } catch (error) {
           console.log(error);
         }
+
         document.querySelector("button").disabled = false;
       });
     </script>

@@ -31,6 +31,10 @@ input:disabled {
   background-color: #ddd;
 }
 
+input:focus {
+  border-color: var(--color1);
+}
+
 output {
   color: #fff;
 }

@@ -73,6 +73,7 @@ header nav a:hover {
   padding: 10px 12px;
   border-radius: 5px;
   font-size: 14px;
+  display: none;
 }
 
 .btn-menu {
@@ -190,6 +191,10 @@ footer .f-right > div {
   }
 
   .btn-menu {
+    display: inline-block;
+  }
+
+  .btn-credit {
     display: inline-block;
   }
 

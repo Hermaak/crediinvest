@@ -43,7 +43,7 @@ header {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #ddd;
-  /* box-shadow: 0 1px 1px #eee; */
+  box-shadow: 0 1px 0px 1px #eeeeee7f;
   position: fixed;
   top: 0;
   width: 100%;
@@ -75,6 +75,10 @@ header nav a:hover {
   font-size: 14px;
   width: 320px;
   text-align: center;
+}
+
+.btn-credit:hover {
+  opacity: .97;
 }
 
 .btn-menu {
@@ -128,7 +132,7 @@ main {
   width: 60px;
   height: 60px;
   color: #fff;
-  /* background-color: #25d366; */
+  box-shadow: 0 0 0px 1px #eeeeee7f;
   background-color: var(--color1);
   border-radius: 100%;
   transition: all 0.3s ease-in;

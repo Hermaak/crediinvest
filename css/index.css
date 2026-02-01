@@ -35,8 +35,10 @@ main h1 {
 }
 
 @keyframes anm {
-  from{top: calc(25% + 10px);}
-  to{top: 25%;}
+  0%{top: calc(25% + 10px);}
+  50%{top: 10%;}
+  75%{top: 25%}
+  100%{top: calc(25% + 10px);}
 }
 
 @media screen and (max-width: 420px) {

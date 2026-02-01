@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -65,6 +65,10 @@
         <input type="text" name="nome" id="nome" required autofocus />
         <label for="nome">Apelido:</label>
         <input type="text" name="apelido" id="apelido" required />
+        <label for="bi">BI:</label>
+        <input type="text" name="bi" id="bi" />
+        <label for="nuit">NUIT:</label>
+        <input type="text" name="nuit" id="nuit" />
         <label for="valor">Valor:</label>
         <input type="number" name="valor" id="valor" value="500" />
         <!-- <input
@@ -149,12 +153,14 @@
 
         const nome = form.get("nome");
         const apelido = form.get("apelido");
+        const bi = form.get("bi");
+        const nuit = form.get("nuit");
         const valor = parseFloat(form.get("valor"));
         const tel = form.get("tel");
         const email = form.get("email");
         const desc = form.get("desc");
 
-        const data = { nome, apelido, valor, tel, email, desc };
+        const data = { nome, apelido, bi, nuit, valor, tel, email, desc };
 
         try {
           const res = await fetch(api_url + "/crediinvest/create", {
@@ -169,9 +175,10 @@
 
           if (res.status === 200) {
             const data = await res.json();
-            console.log(data)
+            console.log(data);
             alert("Obrigado, entraremos em contacto.");
             e.target.reset();
+            window.open(api_url + "/crediinvest/" + data.docName + ".pdf");
           }
         } catch (error) {
           console.log(error);

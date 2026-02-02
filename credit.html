@@ -81,6 +81,11 @@
           step="100"
         />
         <output>500 MT</output> -->
+        <!-- <label for="tipo-pagamento">Tipo de pagamento:</label>
+        <select name="s-tipo-pagamento" id="s-tipo-pagamento">
+          <option value="0">Mensalmente</option>
+          <option value="1">Pagamento único</option>
+        </select> -->
         <label for="juro">Total com juros (28%):</label>
         <input type="text" name="juro" id="juro" value="640 MT" disabled />
         <label for="tel">Telefone:</label>
@@ -94,7 +99,7 @@
           placeholder="Descreva a finalidade do empréstimo..."
           rows="7"
         ></textarea>
-        <button type="submit">Submeter</button>
+        <button type="submit" id="btn-submit">Submeter</button>
       </form>
       <a href="https://wa.me/+258872081978" id="btn-whatsapp"
         ><i class="la la-lg la-whatsapp"></i
@@ -140,15 +145,19 @@
 
     <script src="./js/main.js"></script>
     <script>
-      document.querySelector("#valor").addEventListener("change", (e) => {
-        // document.querySelector("output").textContent = e.target.value + " MT";
-        document.querySelector("#juro").value =
-          parseFloat(e.target.value) * 1.28 + " MT";
+      const events = ["keyup", "change"];
+
+      events.forEach((event) => {
+        document.querySelector("#valor").addEventListener(event, (e) => {
+          // document.querySelector("output").textContent = e.target.value + " MT";
+          document.querySelector("#juro").value =
+            parseFloat(e.target.value) * 1.28 + " MT";
+        });
       });
 
       document.querySelector("form").addEventListener("submit", async (e) => {
         e.preventDefault();
-        document.querySelector("button").disabled = true;
+        document.querySelector("#btn-submit").disabled = true;
         const form = new FormData(e.target);
 
         const nome = form.get("nome");
@@ -178,13 +187,14 @@
             console.log(data);
             alert("Obrigado, entraremos em contacto.");
             e.target.reset();
-	    window.location.href = api_url + "/crediinvest/" + data.docName + ".pdf";
+            window.location.href =
+              api_url + "/crediinvest/" + data.docName + ".pdf";
           }
         } catch (error) {
           console.log(error);
         }
 
-        document.querySelector("button").disabled = false;
+        document.querySelector("#btn-submit").disabled = false;
       });
     </script>
   </body>

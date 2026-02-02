@@ -18,20 +18,20 @@ label {
   color: #333;
 }
 
-input, textarea {
+input, textarea, select {
   padding: 15px;
   border-radius: 5px;
   outline: none;
   border: none;
   margin: 5px 0 5px 0;
-  border: 1px solid #ccc;
+  border: 1px dotted #ccc;
 }
 
 input:disabled {
-  background-color: #ddd;
+  background-color: #f6f6f6;
 }
 
-input:focus {
+input:focus, textarea:focus, select:focus {
   border-color: var(--color1);
 }
 

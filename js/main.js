@@ -1,5 +1,6 @@
-// const api_url = "http://localhost:8000";
-const api_url = "https://api-master.onrender.com";
+const api_url = window.location.protocol.includes("s")
+  ? "https://api-master.onrender.com"
+  : "http://localhost:8000";
 
 let menuHidden = true;
 
